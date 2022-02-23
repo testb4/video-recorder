@@ -1,0 +1,41 @@
+{
+  "author": "TestB4",
+  "background": {
+    "scripts": [
+      "src/background.js",
+      "src/backgroundUtils.js",
+      "src/backgroundListeners.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "js": [
+        "src/contentScript.js"
+      ],
+      "matches": [
+        "\u003Call_urls>"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "description": "Record tab activity, manage by window messages.",
+  "manifest_version": 2,
+  "minimum_chrome_version": "49",
+  "name": "Test Video Recorder",
+  "permissions": [
+    "storage",
+    "tabs",
+    "tabCapture",
+    "\u003Call_urls>",
+    "downloads",
+    "downloads.shelf"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "image/main-icon-19.png",
+      "38": "image/main-icon-38.png"
+    }
+  },
+  "version": "1.2.0"
+}
